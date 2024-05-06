@@ -1,0 +1,133 @@
+[gd_scene load_steps=19 format=3 uid="uid://jsf5dqa5mejx"]
+
+[ext_resource type="Texture2D" uid="uid://bn13tvs7iq1rt" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/enemy-death/enemy-death-1.png" id="1_55xlx"]
+[ext_resource type="Script" path="res://Enemy/Frog.gd" id="1_sxgpl"]
+[ext_resource type="Texture2D" uid="uid://ci10gmqtr3b1p" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/enemy-death/enemy-death-2.png" id="2_5wc1w"]
+[ext_resource type="Texture2D" uid="uid://bj58a4v3yjnsp" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/enemy-death/enemy-death-3.png" id="3_tscun"]
+[ext_resource type="Texture2D" uid="uid://b52cjpnja738s" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/enemy-death/enemy-death-4.png" id="4_p1qfm"]
+[ext_resource type="Texture2D" uid="uid://d0csy0u8jkev7" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/enemy-death/enemy-death-5.png" id="5_v6tog"]
+[ext_resource type="Texture2D" uid="uid://bn8fv2xb678j3" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/enemy-death/enemy-death-6.png" id="6_llbl1"]
+[ext_resource type="Texture2D" uid="uid://do3wmosnhjso6" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/frog/idle/frog-idle-1.png" id="7_qaq8m"]
+[ext_resource type="Texture2D" uid="uid://b6d7qlc10pynk" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/frog/idle/frog-idle-2.png" id="8_12okp"]
+[ext_resource type="Texture2D" uid="uid://bgnt52k5hhymn" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/frog/idle/frog-idle-3.png" id="9_0k005"]
+[ext_resource type="Texture2D" uid="uid://d2wwvpduurftc" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/frog/idle/frog-idle-4.png" id="10_pnbmp"]
+[ext_resource type="Texture2D" uid="uid://b2r4g85by5dm1" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/frog/jump/frog-jump-1.png" id="11_n4emp"]
+[ext_resource type="Texture2D" uid="uid://by1jfugbngdfe" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/frog/jump/frog-jump-2.png" id="12_keosh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13awo"]
+size = Vector2(21, 2.22221)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_grkd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_55xlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5wc1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tscun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p1qfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v6tog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_llbl1")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qaq8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_12okp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0k005")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pnbmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qaq8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qaq8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qaq8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qaq8m")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qaq8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n4emp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_keosh")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cw1sa"]
+radius = 90.1998
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o81yg"]
+size = Vector2(17, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2dkd"]
+size = Vector2(25, 11.25)
+
+[node name="Frog" type="CharacterBody2D"]
+script = ExtResource("1_sxgpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.00001)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_13awo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_grkd8")
+animation = &"Idle"
+metadata/_edit_lock_ = true
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_cw1sa")
+
+[node name="PlayerDeath" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
+position = Vector2(-0.5, -14)
+shape = SubResource("RectangleShape2D_o81yg")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(0, -5.625)
+shape = SubResource("RectangleShape2D_p2dkd")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
