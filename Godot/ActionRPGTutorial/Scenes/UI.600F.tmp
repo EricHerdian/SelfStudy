@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbjq15ji2a60x"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_1vxgu"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 24.0
+script = ExtResource("1_1vxgu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 23.0
+text = "HP = 4"
