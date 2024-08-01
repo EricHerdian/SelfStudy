@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=3 uid="uid://ocdq47bnd421"]
+
+[ext_resource type="PackedScene" uid="uid://evu4s54e2ag0" path="res://scenes/Character.tscn" id="1_lbw5h"]
+[ext_resource type="Texture2D" uid="uid://da5578j1yfn3c" path="res://assets/Main Characters/Pink Man/Idle (32x32).png" id="2_chhn1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk7r1"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sg7m"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jbjj"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eovfi"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idcvd"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ende"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37spr"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs2ir"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awrak"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n67bl"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdud1"]
+atlas = ExtResource("2_chhn1")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ru0vo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk7r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sg7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jbjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eovfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idcvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ende")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37spr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs2ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awrak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n67bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdud1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 20.0
+}]
+
+[node name="NPC_PinkMan" instance=ExtResource("1_lbw5h")]
+light_mask = 0
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_ru0vo")

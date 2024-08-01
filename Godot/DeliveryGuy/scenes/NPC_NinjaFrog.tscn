@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=3 uid="uid://cypfs1b8to1mf"]
+
+[ext_resource type="PackedScene" uid="uid://evu4s54e2ag0" path="res://scenes/Character.tscn" id="1_llsnh"]
+[ext_resource type="Texture2D" uid="uid://cdbdwt5w307se" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="2_nt84i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsn1e"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f22kj"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6c3x"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k372"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bojq"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl1r5"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1kpt"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spni8"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnc0f"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qctn"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6da6"]
+atlas = ExtResource("2_nt84i")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fs1cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsn1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f22kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6c3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k372")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bojq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl1r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1kpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spni8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnc0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qctn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6da6")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 20.0
+}]
+
+[node name="NPC_NinjaFrog" instance=ExtResource("1_llsnh")]
+collision_layer = 4
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_fs1cd")

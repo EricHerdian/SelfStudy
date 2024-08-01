@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8k5d48ybbchn"]
+
+[ext_resource type="Script" path="res://scripts/UIMain.gd" id="1_3xgor"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqngg"]
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_101ux"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4obi"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua6au"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Interface" type="CanvasLayer"]
+script = ExtResource("1_3xgor")
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.463
+anchor_top = 0.022
+anchor_right = 0.537
+anchor_bottom = 0.165
+offset_left = 0.359985
+offset_top = 0.159999
+offset_right = -0.359985
+offset_bottom = 0.199997
+grow_horizontal = 2
+text = "Time
+00:00"
+label_settings = SubResource("LabelSettings_bqngg")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.022
+anchor_right = 0.131906
+anchor_bottom = 0.093
+offset_top = 0.159999
+offset_right = 0.159973
+offset_bottom = 0.0400009
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_bqngg")
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.925
+anchor_top = 0.022
+anchor_right = 0.987
+anchor_bottom = 0.133
+offset_left = -0.00012207
+offset_top = 0.159999
+offset_right = 0.639893
+offset_bottom = 0.240005
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="GameMenuPanel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GameMenuPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2495
+anchor_top = 0.210889
+anchor_right = 0.7495
+anchor_bottom = 0.789111
+offset_left = 0.639954
+offset_top = 0.159973
+offset_right = 0.639954
+offset_bottom = -0.160065
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_101ux")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="GameMenuPanel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.0988462
+anchor_right = 0.63
+anchor_bottom = 0.18
+offset_left = 0.0599823
+offset_top = -0.120003
+offset_right = 0.299957
+offset_bottom = 0.119995
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "GAME_STATUS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameMenuPanel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.327
+anchor_top = 0.483
+anchor_right = 0.675
+anchor_bottom = 0.707
+offset_left = -1.28001
+offset_top = 0.071991
+offset_bottom = -0.112
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="ContinueButton" type="Button" parent="GameMenuPanel/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_i4obi")
+text = "Continue"
+
+[node name="ExitButton" type="Button" parent="GameMenuPanel/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ua6au")
+text = "Main Menu"
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="GameMenuPanel/Panel/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="GameMenuPanel/Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

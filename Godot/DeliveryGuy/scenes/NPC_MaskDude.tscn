@@ -1,0 +1,94 @@
+[gd_scene load_steps=15 format=3 uid="uid://b6204h4f3fphs"]
+
+[ext_resource type="PackedScene" uid="uid://evu4s54e2ag0" path="res://scenes/Character.tscn" id="1_n4nc8"]
+[ext_resource type="Texture2D" uid="uid://6il4l2kib0b4" path="res://assets/Main Characters/Mask Dude/Idle (32x32).png" id="2_x68ef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpynm"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnr2x"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sipk"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8n8k"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ocg8"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rix4n"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go5oi"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db7si"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73pxb"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttto7"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lafo"]
+atlas = ExtResource("2_x68ef")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_panls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpynm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnr2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sipk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8n8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ocg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rix4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go5oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db7si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73pxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttto7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lafo")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 20.0
+}]
+
+[node name="NPC_MaskDude" instance=ExtResource("1_n4nc8")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_panls")

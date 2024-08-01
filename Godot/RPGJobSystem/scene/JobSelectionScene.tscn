@@ -1,0 +1,141 @@
+[gd_scene load_steps=5 format=3 uid="uid://byne404td2nug"]
+
+[ext_resource type="Script" path="res://script/JobSelectionScene.gd" id="1_1616k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iilxq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mqnf"]
+bg_color = Color(0.314316, 0.314316, 0.314316, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gll8v"]
+bg_color = Color(0.564522, 0.590094, 0.604122, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1616k")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iilxq")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.0609568
+anchor_right = 0.194222
+anchor_bottom = 0.0625432
+offset_left = -0.128
+offset_top = -23.5
+offset_right = 0.255981
+offset_bottom = 23.472
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113549
+anchor_top = 0.205148
+anchor_right = 0.886451
+anchor_bottom = 0.881272
+offset_left = -2.80801
+offset_top = -4.936
+offset_right = 2.80798
+offset_bottom = 4.93597
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="JobBoxPanel" type="Panel" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2mqnf")
+
+[node name="JobBoxContainer" type="VBoxContainer" parent="GridContainer/JobBoxPanel"]
+layout_mode = 2
+offset_right = 448.0
+offset_bottom = 448.0
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/JobBoxPanel/JobBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+
+[node name="JobName" type="Label" parent="GridContainer/JobBoxPanel/JobBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Job Name"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="GridContainer/JobBoxPanel/JobBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="JobDescription" type="Label" parent="GridContainer/JobBoxPanel/JobBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "\"Job Description\""
+autowrap_mode = 2
+
+[node name="SkillBoxPanel" type="Panel" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gll8v")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/SkillBoxPanel"]
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 448.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/SkillBoxPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SkillTitle" type="Label" parent="GridContainer/SkillBoxPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 28
+text = "Skill List"
+horizontal_alignment = 1
+
+[node name="SkillBoxContainer" type="VBoxContainer" parent="GridContainer/SkillBoxPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

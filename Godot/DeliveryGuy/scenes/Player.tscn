@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfu6iygb25rua"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_gu7c0"]
+[ext_resource type="PackedScene" uid="uid://evu4s54e2ag0" path="res://scenes/Character.tscn" id="1_xjukp"]
+[ext_resource type="AudioStream" uid="uid://cnsy16u4uedf4" path="res://assets/Sound/pickup.wav" id="3_1g57y"]
+
+[node name="Player" instance=ExtResource("1_xjukp")]
+z_index = 1
+collision_layer = 2
+script = ExtResource("1_gu7c0")
+item_picked_sound = ExtResource("3_1g57y")
+
+[node name="Area2D" parent="." index="0"]
+collision_layer = 2
+collision_mask = 12
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+frame_progress = 0.92192
+flip_h = false
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]

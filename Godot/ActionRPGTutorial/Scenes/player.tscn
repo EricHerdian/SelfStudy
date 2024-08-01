@@ -839,9 +839,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 active = false
 reset_on_save = false
-libraries = {
-"": SubResource("AnimationLibrary_5mtdx")
-}
 tree_root = SubResource("AnimationNodeStateMachine_flskg")
 advance_expression_base_node = NodePath("")
 anim_player = NodePath("../AnimationPlayer")

@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1722443152
+icon.svg::CompressedTexture2D::969647037784753789::1722410582::1722443152::1::::<><>::
+::res://resource/::1722443288
+class.csv::::5721399401348004282::1722443031::1722443295::0::::<><>::
+class.JOBNAME.translation::OptimizedTranslation::1350252225949069507::1722443289::0::1::::<><>::
+class.DESCRIPTION.translation::OptimizedTranslation::4106717760800042037::1722443289::0::1::::<><>::
+class.SKILLS.translation::OptimizedTranslation::2359757849327827787::1722443289::0::1::::<><>::
+::res://scene/::1722442626
+JobSelectionScene.tscn::PackedScene::4098085856554403850::1722442626::0::1::::<><>::res://script/JobSelectionScene.gd
+::res://script/::1722442626
+JobSelectionScene.gd::GDScript::-1::1722442626::0::1::::<>Control<>::

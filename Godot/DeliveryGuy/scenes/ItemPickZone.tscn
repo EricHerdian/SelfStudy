@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjh3q2v0t2lmi"]
+
+[ext_resource type="Script" path="res://scripts/ItemPickZone.gd" id="1_oeqlt"]
+
+[sub_resource type="Curve" id="Curve_njuw4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[node name="ItemPickupZone" type="Area2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_oeqlt")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 25
+lifetime = 2.0
+speed_scale = 1.5
+emission_shape = 3
+emission_rect_extents = Vector2(50, 40)
+direction = Vector2(0, 0)
+gravity = Vector2(0, -25)
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_max = 2.5
+scale_amount_curve = SubResource("Curve_njuw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
